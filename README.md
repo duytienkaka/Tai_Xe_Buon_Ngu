@@ -85,7 +85,7 @@ Kết nối đến Google Driver để lấy dữ liệu đã được lưu tr�
 <p>Với epochs chúng ta chỉ nên để 80-100 vì nếu ít epochs sẽ dẫn đến việc học của mô hình không được đầy đủ, từ đó mô hình sẽ nhận diện không chính xác. Nếu nhiều epochs quá sẽ dẫn đến tình trạng overfitting, lúc này model đã học quá mức sẽ dẫn đến việc nhận diện sai lệch do học quá nhiều.</p>
 ## 📖 Hướng dẫn sử dụng
 1️⃣ Check model bằng ảnh test
-import requests
+<p>import requests
 image_url = "https://cdn-i.vtcnews.vn/resize/th/upload/2023/12/10/buon-ngu-khi-lai-xe-23293142.jpeg"
 image_path = "/content/drive/MyDrive/BTL/Drowsiness Detection.v2-augmented-v1.yolov7pytorch/ngu.jpg"
 response = requests.get(image_url)
@@ -94,11 +94,11 @@ if response.status_code == 200:
         file.write(response.content)
     print(f"✅ Ảnh đã được tải về: {image_path}")
 else:
-    print(f"❌ Không thể tải ảnh từ URL: {image_url}")
+    print(f"❌ Không thể tải ảnh từ URL: {image_url}")</p>
 
  - Sau khi model được train xong, chúng ta sẽ bắt đầu test mô hình bằng hình ảnh được lưu trữ trong driver. Đường dẫn trong image_url có thể thay đổi để check những hình ảnh khác nhau bằng cách lấy link của hình ảnh trên internet. Đây là bước lấy hình ảnh trên mạng về đường dẫn cho bước tiếp theo.
 2️⃣ Quản lý sinh viên & mã QR
-import subprocess
+<p>import subprocess
 cmd = [
     "python3", "/content/yolov7/detect.py",  # Đường dẫn chính xác của detect.py
     "--weights", "/content/drive/MyDrive/BTL/Drowsiness Detection.v2-augmented-v1.yolov7pytorch/weights/best.pt",  # Model đã train xong
@@ -113,11 +113,11 @@ cmd = [
 ]
 result = subprocess.run(cmd, capture_output=True, text=True)
 print(result.stdout)
-print(result.stderr)
+print(result.stderr)</p>
 <p>Sau bước 1 là bước sử dụng model đã được train để kiểm tra ảnh, hình ảnh sẽ được lấy bằng đường dẫn đã lấy ở bước 1 để sử dụng. Tại đây, ảnh được đưa cho mô hình kiểm tra và đưa ra kết luận cuối cùng rằng tài xế có buồn ngủ hay không.</p>
 
 3️⃣ Trả về kết quả và hình ảnh
-import matplotlib.pyplot as plt
+<p>import matplotlib.pyplot as plt
 import cv2
 import os
 
@@ -135,7 +135,7 @@ if os.path.exists(image_path):
     plt.figtext(0.5, 0.01, "⚠️ CẢNH BÁO: Tài xế có dấu hiệu buồn ngủ!", wrap=True, horizontalalignment='center', fontsize=14, color='red', fontweight='bold')
     plt.show()
 else:
-    print(f"❌ Không tìm thấy ảnh: {image_path}")
+    print(f"❌ Không tìm thấy ảnh: {image_path}")</p>
 <p>Tại bước cuối cùng này sẽ trả về hình ảnh đã được nhận diện và đưa ra kết quả cuối cùng và đó cũng là kết luận của mô hình.</p>
 ## ⚙️ Cấu hình & Ghi chú
 

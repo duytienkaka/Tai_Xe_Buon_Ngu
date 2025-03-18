@@ -98,8 +98,7 @@ else:
 
  - Sau khi model được train xong, chúng ta sẽ bắt đầu test mô hình bằng hình ảnh được lưu trữ trong driver. Đường dẫn trong image_url có thể thay đổi để check những hình ảnh khác nhau bằng cách lấy link của hình ảnh trên internet. Đây là bước lấy hình ảnh trên mạng về đường dẫn cho bước tiếp theo.
 2️⃣ Quản lý sinh viên & mã QR
-<div>import subprocess
-
+import subprocess
 cmd = [
     "python3", "/content/yolov7/detect.py",  # Đường dẫn chính xác của detect.py
     "--weights", "/content/drive/MyDrive/BTL/Drowsiness Detection.v2-augmented-v1.yolov7pytorch/weights/best.pt",  # Model đã train xong
@@ -112,16 +111,13 @@ cmd = [
     "--name", "detect_output",
     "--exist-ok"
 ]
-
 result = subprocess.run(cmd, capture_output=True, text=True)
 print(result.stdout)
 print(result.stderr)
-</div>
-Sau bước 1 là bước sử dụng model đã được train để kiểm tra ảnh, hình ảnh sẽ được lấy bằng đường dẫn đã lấy ở bước 1 để sử dụng. Tại đây, ảnh được đưa cho mô hình kiểm tra và đưa ra kết luận cuối cùng rằng tài xế có buồn ngủ hay không.
+<p>Sau bước 1 là bước sử dụng model đã được train để kiểm tra ảnh, hình ảnh sẽ được lấy bằng đường dẫn đã lấy ở bước 1 để sử dụng. Tại đây, ảnh được đưa cho mô hình kiểm tra và đưa ra kết luận cuối cùng rằng tài xế có buồn ngủ hay không.</p>
 
 3️⃣ Trả về kết quả và hình ảnh
-<div>
-  import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import cv2
 import os
 
@@ -140,8 +136,7 @@ if os.path.exists(image_path):
     plt.show()
 else:
     print(f"❌ Không tìm thấy ảnh: {image_path}")
-</div>
-Tại bước cuối cùng này sẽ trả về hình ảnh đã được nhận diện và đưa ra kết quả cuối cùng và đó cũng là kết luận của mô hình.
+<p>Tại bước cuối cùng này sẽ trả về hình ảnh đã được nhận diện và đưa ra kết quả cuối cùng và đó cũng là kết luận của mô hình.</p>
 ## ⚙️ Cấu hình & Ghi chú
 
 ## 📰 Poster

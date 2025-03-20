@@ -1,4 +1,4 @@
-<h1 align="center">ỨNG DỤNG AI TRONG VIỆC KIỂM TRA TÀI XẾ MỆT MỎI </h1>
+<h1 align="center">PHÁT HIỆN MỆT MỎI CỦA TÀI XẾ</h1>
 
 <div align="center">
 

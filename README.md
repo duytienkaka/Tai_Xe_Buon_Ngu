@@ -99,6 +99,7 @@ if response.status_code == 200:
 else:
     print(f"❌ Không thể tải ảnh từ URL: {image_url}")
 <p>Sau khi model được train xong, chúng ta sẽ bắt đầu test mô hình bằng hình ảnh được lưu trữ trong driver. Đường dẫn trong image_url có thể thay đổi để check những hình ảnh khác nhau bằng cách lấy link của hình ảnh trên internet. Đây là bước lấy hình ảnh trên mạng về đường dẫn cho bước tiếp theo.</p>
+
 <h2>2️⃣ Quản lý sinh viên & mã QR</h2>
 
 import subprocess
@@ -134,7 +135,7 @@ image_path = "/content/drive/MyDrive/BTL/Drowsiness Detection.v2-augmented-v1.yo
 if os.path.exists(image_path):
     # Đọc ảnh bằng OpenCV
     img = cv2.imread(image_path)
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  # Chuyển ảnh sang RGB để hiển thị đúng màu
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     plt.figure(figsize=(8, 6))
     plt.imshow(img)
     plt.axis("off")  # Ẩn trục tọa độ
@@ -142,8 +143,8 @@ if os.path.exists(image_path):
     plt.show()
 else:
     print(f"❌ Không tìm thấy ảnh: {image_path}")
+    
 <p>Tại bước cuối cùng này sẽ trả về hình ảnh đã được nhận diện và đưa ra kết quả cuối cùng và đó cũng là kết luận của mô hình.</p>
-<h1>⚙Cấu hình & Ghi chú</h1>
 
 
 
